@@ -7,11 +7,18 @@ import commentRoutes from "./routes/comments.js";
 import authRoutes from "./routes/auth.js";
 import cookieParser from "cookie-parser";
 import path from "path";
-
+import cors from "cors";
 
 const app = express();
 dotenv.config();
 
+ const cors = require('cors');
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 const connect = () => {
   mongoose
     .connect(process.env.MONGO)
