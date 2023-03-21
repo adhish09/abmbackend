@@ -10,7 +10,11 @@ import path from "path";
 import cors from "cors";
 
 
+
+
 const app = express();
+
+app.use(cors());
 dotenv.config();
 
 const connect = () => {
