@@ -42,6 +42,15 @@ app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
 
 
+
+app.get('/', (req, res) => {
+  res.cookie('myCookie', 'myValue', {
+    sameSite: 'none',
+    secure: true
+  });
+  res.send('Cookie set');
+});
+
 //error handler
 app.use((err, req, res, next) => {
   const status = err.status || 500;
