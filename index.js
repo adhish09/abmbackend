@@ -44,7 +44,7 @@ app.use("/api/comments", commentRoutes);
 
 
 app.get('/', (req, res) => {
-  res.cookie('myCookie', 'myValue', {
+  res.cookie({
     sameSite: 'none',
     secure: true,
     domain: '.google.com',
